@@ -41,7 +41,8 @@ async function login() {
         4: 'Share',
         5: 'Upload',
         6: 'Download',
-        7: 'Create'
+        7: 'Create',
+        8: 'Edit'
       };
       
     const userName = prompt('Enter username:');
