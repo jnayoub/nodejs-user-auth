@@ -5,7 +5,7 @@ async function login() {
   
     try {
   
-      const response = await fetch('http://localhost:3000/getUser', {
+      const response = await fetch(`${process.env.API_URL}/getUser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -15,6 +15,7 @@ async function login() {
           userPassword  
         })
       });
+      
   
       if(!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,7 +69,7 @@ async function login() {
     }
   
     try {
-        const response = await fetch('http://localhost:3000/addUser', {
+        const response = await fetch('${process.env.API_URL}/addUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
