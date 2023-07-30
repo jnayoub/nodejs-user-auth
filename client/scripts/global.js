@@ -5,7 +5,7 @@ async function login() {
   
     try {
   
-      const response = await fetch(`${process.env.API_URL}/getUser`, {
+      const response = await fetch(`/getUser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ async function login() {
     }
   
     try {
-        const response = await fetch(`${process.env.API_URL}/addUser`, {
+        const response = await fetch(`/addUser`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
