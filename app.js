@@ -23,6 +23,6 @@ app.use("/getUser", getUserRouter);
 
 app.use('/testpage', express.static('client', {index: 'index.html'}));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server started on port 3000");
 });
