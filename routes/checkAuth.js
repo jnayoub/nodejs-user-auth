@@ -1,15 +1,10 @@
 const jwt = require("jsonwebtoken");
-const db = require("../database/mongodb-connection");
 
 const express = require("express");
 const authRouter = express.Router();
 authRouter.use(express.json());
 
-const userSchema = require("../database/schemas/user-schema");
-
 const cors = require("cors");
-
-const bcrypt = require("bcrypt");
 
 authRouter.use(
   cors({
@@ -18,6 +13,7 @@ authRouter.use(
 );
 
 userRouter.get('/check-auth', (req, res) => {
+    console.log('user hit check auth')
     const token = req.cookies.jwt;  // Assuming the cookie's name is "jwt"
 
     if (!token) {
