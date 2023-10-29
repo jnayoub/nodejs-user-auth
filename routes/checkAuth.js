@@ -12,7 +12,7 @@ authRouter.use(
   })
 );
 
-userRouter.get('/check-auth', (req, res) => {
+authRouter.get('/check-auth', (req, res) => {
     console.log('user hit check auth')
     const token = req.cookies.jwt;  // Assuming the cookie's name is "jwt"
 
