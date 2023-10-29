@@ -13,13 +13,13 @@ app.use(
 const dotenv = require("dotenv");
 dotenv.config();
 
-
-
-
 const addUserRouter = require("./routes/addUser");
 const getUserRouter = require("./routes/getUser");
+const checkAuthRouter = require("./routes/checkAuth");
+
 app.use("/addUser", addUserRouter);
 app.use("/getUser", getUserRouter);
+app.use("/checkAuth", checkAuthRouter);
 
 app.use('/testpage', express.static('client', {index: 'index.html'}));
 

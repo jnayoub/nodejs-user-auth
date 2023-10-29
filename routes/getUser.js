@@ -45,6 +45,7 @@ userRouter.post("/", async (req, res, next) => {
 
     return res
       .status(200)
+      .cookie('jwt', token, { httpOnly: true, secure: true, maxAge: 3600000 })
       .json({ token, message: "User authenticated successfully!" });
   } catch (error) {
     next(error);
