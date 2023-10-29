@@ -1,11 +1,14 @@
 const jwt = require("jsonwebtoken");
 
+const cookieParser = require('cookie-parser');
+
+
 const express = require("express");
 const userRouter = express.Router();
 userRouter.use(express.json());
 
 const cors = require("cors");
-const cookieParser = require('cookie-parser');
+
 userRouter.use(cookieParser());
 
 
@@ -16,7 +19,9 @@ userRouter.use(
 );
 
 userRouter.get('/check-auth', (req, res) => {
-    console.log('user hit check auth')
+    console.log('Request Headers:', req.headers);
+    console.log('Cookies:', req.cookies);
+    console.log('user hit check auth v2')
     const token = req.cookies.jwt;  // Assuming the cookie's name is "jwt"
 
     if (!token) {
