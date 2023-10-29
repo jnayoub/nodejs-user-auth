@@ -15,6 +15,7 @@ userRouter.use(cookieParser());
 userRouter.use(
   cors({
     origin: "*",
+    credentials: true
   })
 );
 
