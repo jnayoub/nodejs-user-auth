@@ -5,6 +5,9 @@ const userRouter = express.Router();
 userRouter.use(express.json());
 
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
+userRouter.use(cookieParser());
+
 
 userRouter.use(
   cors({
