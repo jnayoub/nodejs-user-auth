@@ -1,18 +1,18 @@
 const jwt = require("jsonwebtoken");
 
 const express = require("express");
-const authRouter = express.Router();
-authRouter.use(express.json());
+const userRouter = express.Router();
+userRouter.use(express.json());
 
 const cors = require("cors");
 
-authRouter.use(
+userRouter.use(
   cors({
     origin: "*",
   })
 );
 
-authRouter.get('/check-auth', (req, res) => {
+userRouter.get('/check-auth', (req, res) => {
     console.log('user hit check auth')
     const token = req.cookies.jwt;  // Assuming the cookie's name is "jwt"
 
@@ -29,4 +29,4 @@ authRouter.get('/check-auth', (req, res) => {
 });
 
 
-module.exports = authRouter;
+module.exports = userRouter;
