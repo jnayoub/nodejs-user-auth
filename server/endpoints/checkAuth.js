@@ -14,15 +14,13 @@ userRouter.use(cookieParser());
 
 userRouter.use(
     cors({
-      origin: "https://azure-storage-account-d446090db141.herokuapp.com",  // Replace with the origin of App2
+      origin: "*",  // Replace with the origin of App2
       credentials: true  // This allows the server to accept cookies sent from the origin
     })
   );
 
 userRouter.get('/check-auth', (req, res) => {
-    console.log('Request Headers:', req.headers);
-    console.log('Cookies:', req.cookies);
-    console.log('user hit check auth v2')
+    console.log('user hit check-auth')
     let token;
     
     // Check if token is in cookies first

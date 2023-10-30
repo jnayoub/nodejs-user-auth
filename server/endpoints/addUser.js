@@ -1,10 +1,10 @@
-const db = require("../database/mongodb-connection");
+const db = require("../connections/database/mongo/mongodb-connection");
 
 const express = require("express");
 const userRouter = express.Router();
 userRouter.use(express.json());
 
-const userSchema = require("../database/schemas/user-schema");
+const userSchema = require("../connections/database/mongo/schemas/user-schema");
 
 const cors = require("cors");
 
