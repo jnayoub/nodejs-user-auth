@@ -4,8 +4,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 3000;
 const protocol = process.env.PROTOCOL || 'http';
+const port = process.env.PORT || 3000;
 
 const cors = require("cors");
 app.use(

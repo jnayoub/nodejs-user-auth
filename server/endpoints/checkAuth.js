@@ -19,7 +19,7 @@ userRouter.use(
     })
   );
 
-userRouter.get('/check-auth', (req, res) => {
+userRouter.get('/', (req, res) => {
     console.log('user hit check-auth')
     let token;
     
